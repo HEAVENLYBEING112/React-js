@@ -1,0 +1,119 @@
+var a = 10 --> can be updated further and declare multiple times
+let a = 10 --> can be updated but cannot be declared multiple times.
+const a = 10 --> it is constant (no update/reassign & no redeclare)
+
+
+20
+already been declared
+already been declared
+20
+39
+assigned to an constant variable
+
+var a = 10;
+var a = 20;
+console.log(a)
+
+let b = 20 ;
+let b = 23;
+console.log(b)
+
+const c = 21;
+const c = 25;
+console.log(c)
+
+
+var d = 10;
+d = 20;
+console.log(d)
+
+let e = 10;
+e = 39;
+console.log(e)
+
+const f = 12;
+f = 48;
+console.log(f)
+
+
+already been declared
+already been declared
+assigned to constant variable
+19
+{undefined
+ERROR!}  --> cannot access before initiation(l)
+
+var g = 23;
+let g = 234;
+console.log(g)
+
+let h = 23;
+var h = 234;
+console.log(g)
+
+const i = 10;
+i = 23;
+console.log(i)
+
+j = 19;
+console.log(j);
+
+
+console.log(k);
+var k = 23;
+console.log(l);
+let l = 43;
+console.log(w);
+const w = 43;
+
+var
+
+var is (function scoped  ---> available inside the function where it is called)
+var old term used rarely nowadays
+var can be redeclared and updated
+var --> results in hoisting the variable
+hoisted --> it carries the variable to the top of the call stack before execution. even if declared after console.log it will return in un-defined rather than not-defined as the variable moved but not its value
+if we initialized a variable with var and then assigned another variable without any keyword it is defaulted with var
+var keyword is ud=sed a lot before es6
+
+LET
+
+let is (block scoped --> works within{})
+let can be updated but not redeclared
+used inside if functions inside if function we can redeclare a variable which is already declared outside the --> {}
+
+
+//Arithmetic operation;
+var a = 10;
+var b = 10;
+var c = a + b ;
+var d = a - b ;
+var e = a * b ;
+var f = a / b ;
+var g = a % b ;
+console.log("input 1 : " + a)
+console.log("input 2 : " + b)
+console.log("Addition : " + c)
+console.log("Subtraction : " + d)
+console.log("Multiplication : " + e)
+console.log("division : " + f)
+console.log("modulus : " + g)
+
+output:
+
+input 1 : 10
+input 2 : 10
+Addition : 20
+Subtraction : 0
+Multiplication : 100
+division : 1
+modulus : 0
+
+strictly equals "===" --> even if '0' == 0 will return true as both are 0 here it also checks type so as one as string and other as integer it will return false
+other logical terms
+>    5 > 4 --> true || else(false)
+<    4 < 5 --> true || else(false)
+>=   4(+values) => 4 --> true || else(false)
+<=   4 <= 4(+values) --> true || else(false)
+==   4 == 4 --> true || else(false)
+as common term example for all these
