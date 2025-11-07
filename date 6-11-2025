@@ -1,0 +1,41 @@
+Armstrong number == narcistic number == power sum
+
+REACT: 
+   react is an (SPA ==> Single Page Application)
+   virtual DOM ==> updates only the  particular section upon render (only header or para or list)
+   real DOM ==> updates entire code on render(entire code)
+   in react we can reuse a component(we can use a some code and use it on multiple areas just by calling)
+
+   ..  ==> one folder before
+
+   ./  ==> current directory
+
+   js  ==> java script (only code in java)
+
+   jsx  ==> in this java script we can code in html (jsx == jsxml);
+
+   <> </>  ==> (empty tags) otherwise (fragments) ==> to return multiple lines we need to use fragment
+
+   <Info/>  ==> slash at the end is used to call the file
+
+   import React from 'react';  ==> must include headerfile
+
+   export default (function name)  ==> export a function
+   ex:
+   export default Projectfile
+
+   import Projectfile from './Projectfile'  ==> import the exported file in another file
+
+   if it is mentioned as ./ it refers that the importing file location is same as the current file as both are in same folder
+
+   if not it will be as './src/Projectfile'  ==> to import from other folder
+
+   closures ==> we send the variable globally and store value in it
+
+   arr =[1,2,3[4,5,6]]	==> the output should be 5 so ==> arr[3][1]  ==> 3 denotes the position of second array and 1 denotes value in the second array
+
+   map create a new array from existing arroy
+
+   map does not affect the original array
+
+   
