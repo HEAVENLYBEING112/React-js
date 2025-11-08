@@ -1,0 +1,109 @@
+console.log("time")  ==> throws output
+
+console.warn("time")  ==> throws output with symbol indicating warning in it
+
+console.error("time")  ==> throws output with symbol indicating error in it
+
+setTimeout(function(){ console.log("print any statement") },5000)  ==> 1000 millisecond = 1 second so here the output prints after 5 seconds
+
+promises
+ 
+  ==> it is an object and a type of error handling 		
+
+  ==> then , catch , finally were used in the promise method at the end while calling 
+
+  ==> then is used as if/else condition 
+  
+  ==> catch is used to catch the out put in side function
+
+  ==> finally is used to end the promise (process)
+
+let promiseConcept = new Promise(function(resolve , reject){
+  let success = true;
+  if(success == true){
+    resolve("successfully executed")
+  }
+  else{
+    reject("failed")
+  }
+})
+
+promiseConcept .then(res => console.log(res)) .catch(err => console.log(err)) .finally(() => console.log("...............end"))
+
+output ==> successfully executed
+
+if we put let success = fail the output would be failed as .then is responsible for choosing the out .catch is used for catch and display the chosen out and .finally is used to end the promise
+
+ASYNC
+
+async function test (){
+    console.log("dfghjkl")
+}
+
+	==> here async is used before function to tell the compiler that it no need to wait for it i'll catch up on it's own 
+  
+function test1 (){
+    return "dfghjkl"
+}
+async function test (){
+    const qwert = await test1();
+    console.log(qwert)
+}
+test()
+    
+      ==> here await is used when a function output needed to be async so we can use  await function so here the out is dfghjkl  
+
+      ==> literals are used to print in console.log
+
+const person = {
+    name : "sharif",
+    age : 18,
+    gender : "TG"
+}
+console.log(`his name is ${person.name}`,`and he is ${person.gender}`);
+
+output : his name is sharif and he is TG
+
+APPLY
+
+const person = {
+    name : "sharif",
+    age : 18,
+    gender : "TG"
+}
+function call_person(){
+  console.log(this.name)
+}
+call_person.apply(person)
+
+output = sharif
+
+apply is not used often learning for sake of portal sylabus 
+
+by using apply we only need to pass parameters/inputs at call region
+
+const person = {
+    name : "sharif",
+    age : 18,
+}
+function call_person(gender , classes){
+  console.log(this.name)
+}
+call_person.apply(person,["TG","IT"])
+
+output = sharif TG IT
+
+
+BIND
+
+==> if a element is outside the block scope it will formget it's data and while console.log or calling in will result in undefined so bind is used to revitalize the value to that element
+
+let obj = {
+   val:"2",
+   hello: function(){
+    return console.log(this.val)  
+   }
+  }
+  let out = obj.hello.bind(obj);      //without .bind(obj) we will not get output
+  out()     
+  
