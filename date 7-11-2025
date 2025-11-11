@@ -58,18 +58,18 @@ test()
 const person = {
     name : "sharif",
     age : 18,
-    gender : "TG"
+    gender : "male"
 }
 console.log(`his name is ${person.name}`,`and he is ${person.gender}`);
 
-output : his name is sharif and he is TG
+output : his name is sharif and he is male
 
 APPLY
 
 const person = {
     name : "sharif",
     age : 18,
-    gender : "TG"
+    gender : "male"
 }
 function call_person(){
   console.log(this.name)
@@ -89,9 +89,9 @@ const person = {
 function call_person(gender , classes){
   console.log(this.name)
 }
-call_person.apply(person,["TG","IT"])
+call_person.apply(person,["male","IT"])
 
-output = sharif TG IT
+output = sharif male IT
 
 
 BIND
