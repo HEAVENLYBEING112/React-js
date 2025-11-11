@@ -1,0 +1,58 @@
+to set local host port address in package.json file in src we need to update the line in script start to "start": "set PORT=5000 && react-scripts start" 
+
+props ==> used to pass data from parent component to child component 
+
+function app(){
+  const name = 'Nastenka'
+  return(
+      <div style = {{border:"1px solid black",height:"100px"}}>
+      <Day6 name={name}/>
+      </div>
+       )
+      }
+
+
+import {React,Component} from 'react'
+const Day6 = (props) =>{
+    return(
+        <>
+        <h1 style = {{border:"1px solid red"}}>Hello {props.name}</h1>
+        </>
+    )
+}
+export default Day6
+
+------------------------------------------------------------------------------------
+
+import {React,Component} from 'react'
+const Day6 = (props) =>{
+    const array = ["apple","orange","mango"];
+
+    return(
+        <ol>
+          {array.map((data,index) =>{return(<><li>{data}</li></>)})}
+        </ol>
+    )
+}
+export default Day6
+
+output:-
+
+1. apple
+2. orange
+3. mango
+-------------------------------------------------------------------------------------
+
+usestate is used to update the current value	
+
+syntax  ==> const[state,setState]
+
+state => current value (or) initial value
+
+setState => updating value
+
+example  ==> const[num , setNum] = useState(0) ==> here 0 is the current/initial value
+
+too many renders error will pop up if we call a function with parenthesis
+
+and in onClick C should be caps
