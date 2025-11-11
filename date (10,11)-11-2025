@@ -1,0 +1,196 @@
+delete node_modules & package_lock.json 
+
+cd reactapp && npm i && npm i canvas && nvm use 16 && npm start
+
+
+import {React,useState} from 'react'
+
+function Counter(){
+    const[count,setCount] = useState(0)
+    function increment(){
+        setCount(count+1)
+    }
+    function decrement(){
+        setCount(count-1)
+    }
+return(
+    <>
+    <p>Count: {count}</p>
+    <button onClick={increment}>Increment</button>
+    <button onClick={decrement}>Decrement</button>
+    
+    </>
+)
+}
+export default Counter
+
+CONTROLLED
+
+function handleChange(e){
+console.log(e.target.value)
+}
+we use target as we manage to use in controlled manner as it i'll print the full value in the console pannel
+
+UNCONTROLLED
+
+const emailRef = useRef()
+<input ref={emailRef} onChange = {handleChange}/>
+function handleChange(){
+console.log(e.current.value)
+}
+
+here we create a constant obj as ref (emailRef) by using useRef then use that ref as a reference in input field then by onChange if any change occurs it i'll call on the function mentioned
+here as handlechange in which it console logs the current value and prints the each step we give as we type a name and delete it i'll be reflected in console page
+
+example:
+
+=>
+=>s
+=>su
+=>sub
+=>subb
+=>Subbu
+=>subb
+=>sub
+=>su
+=>s
+=>
+
+FOCUS & BLUR
+
+Focus => it is used to highlight the input field bar if we click on that field (onFocus = 
+
+Blur => it is used to blur or unhighlight the field if we remove the cursor from the input field(onBlur = 
+
+Fireevent.Change => if it is present in the app_test.js then we have to give id to input fields; 
+
+
+import {React,useRef,useState} from 'react'
+
+function LoginForm(){
+const emailInputRef = useRef();
+const passwordInputRef= useRef();
+const [formData,setFormData]= useState(
+    {
+        email:"",
+        password:""
+    }
+)
+const submitted={
+    email:"",
+    password:""
+}
+function handleSubmit(event){
+event.preventDefault();
+const submitted={
+    email:emailInputRef.current.value,
+    password:passwordInputRef.current.value
+}
+setFormData({
+    email:emailInputRef.current.value,
+    password:passwordInputRef.current.value
+})
+console.log(submitted);
+emailInputRef.current.value=''
+passwordInputRef.current.value=''
+
+emailInputRef.current.focus();
+}
+return(
+    <>
+    <form onSubmit={handleSubmit}>
+    <input ref={emailInputRef} id="email"/>
+    <input ref={passwordInputRef} id="password"/>
+    <button type="submit">Submit</button>
+    </form>
+    </>
+)
+}
+export default LoginForm
+
+
++ - _ % => these symbols texts and numbers can be used before @ in email
+gmail is a domain => it can be text and numbers 
+com it the final component in the main it can only be a string 
+
+REGEX =>(regular expression) syntax => ( /^[a-zA-Z0-9+-_%]+@[a-zA-Z0-9]+\.[a-zA-Z]/
+
+starts with / and ends with /
+
+backward slash is used before . then only it i'll pass	
+
++ expression is used to move to the next domain such as from name to domain to the final .com
+
+import {React,useState} from 'react';
+
+function ErrorHandling(props) {
+    const [name,setName] = useState('');
+    const [password, setPassword] = useState('');
+    const [Cpassword, setCPassword] = useState('');
+    const [nameError, setNameError] = useState('');
+    const[CPasswordError, setCPasswordError] = useState('');
+    const[email,setEmail] = useState('');
+    const[emailError, setEmailError] = useState('');
+
+    function handleSubmit (e) {
+        const EmailRegex =/^[a-zA-z0-9+_%]+@[a-zA-Z0-9]+\.[a-zA-Z]/
+        e.preventDefault();
+        if(name.length == 0){
+            setNameError('username is required');
+        }
+        else if(name.length <=3){
+            setNameError('char must be more than 3');
+        }
+        else if(password != Cpassword){
+            setCPasswordError('passwords does not match');
+        }
+        else if(!EmailRegex.test(email)){
+            setEmailError('email is invalid');
+        }
+        else{
+            setNameError('');
+            setEmailError("")
+        }
+    }
+    function handleName(e){
+        setName(e.target.value);
+    }
+    function handlePass(e){
+        setPassword(e.target.value);
+    }
+    function handleCPass(e) {
+        setCPassword(e.target.value);
+    }
+    function handleEmail(e){
+        setEmail(e.target.value);
+    }
+
+    return(
+        <>
+            <form onSubmit={handleSubmit}>
+                Name :<input  type='text' name='username' placeholder='Enter username' value={name} onChange={handleName} /><br/>
+                <p style={{color:"red"}}>{nameError}</p><br/>
+                password : <input type='password' name='password' placeholder='Enter password' value={password} onChange={handlePass} /><br/>
+                Confirm password:  <input type='password' name='cPass' placeholder='Enter Confirm password' value={Cpassword} onChange={handleCPass} /><br/>
+                <p style={{color:"red"}}>{CPasswordError}</p><br/>
+                Email:    <input type='text' name='email' placeholder='Enter Email' value={email} onChange={handleEmail} /><br/>
+                <p style={{color:"red"}}>{emailError}</p><br/>
+                <button type='submit'>Submit</button>
+            </form>
+        </>
+    )
+}
+export default ErrorHandling;
+
+
+
+
+useEffect(()=>{
+      console.log("update only on state update")
+  },[btn])
+    useEffect(()=>{
+        console.log("update first time only")
+    },[])
+    useEffect(()=>{
+        console.log("update every time.")
+    },)
